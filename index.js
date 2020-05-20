@@ -1,12 +1,7 @@
 $(document).ready(function() {
-$("#js-shopping-list-form").on('.submit', function(e){
-	var text = $('#shopping-list-entry').val();
-  $('.shoppingList').append($('<li>').append(text));
-  $('#shopping-list-entry').val('');
-  e.preventDefault();
+$("#js-shopping-list-form").on('submit', function (event){
+  let text = $("#shopping-list-entry").val();
+  $(".shopping-list").append('<li>' + text + '</li>');
+  event.preventDefault();
 });
-});
-
-$('.shopping-item-delete').on('click', 'li', function(){
-	$(this).remove();
 });
